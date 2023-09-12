@@ -1,14 +1,5 @@
-grep 'KEYWORDS=' ./chromiumos/src/overlays/overlay-*/chromeos-base/chromeos-bsp-*/chromeos-bsp-*.ebuild | \
-	cut -d '-' -f 2- | \
-	sed -E 's/chromeos-base|chromeos-bsp-//g' | \
-	grep -v -e '-9999' | \
-	sed -E 's/(-[0-9.\-r]+)?\.ebuild//g' | \
-	sed -E 's/KEYWORDS=/\t/g' | \
-	sed -E 's#/.*:##g' | \
-	awk -F '\t' '{ print $2 " " $1 }' | \
-	sed -E 's/"\-\* amd64 x86"/x86_64/g' | \
-	sed -E 's/"\* amd64 x86"/x86_64/g' | \
-	sed -E 's/"\-\* arm64 arm"/arm64/g' | \
-	sed -E 's/"\*"/unknown/g' | \
-	sort -u -d | \
-	cat -
+@=$1
+bash ./scripts/extract_board_arch1.sh > $@
+bash ./scripts/extract_board_arch2.sh >> $@
+bash ./scripts/extract_board_arch3.sh >> $@
+cat $@ | awk '{ print $1 " " $2 }' | grep -v unknown |  sort -u | tee $@
