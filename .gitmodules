@@ -1,0 +1,3 @@
+[submodule "chromiumos/src/project_public"]
+	path = chromiumos/src/project_public
+	url = https://chromium.googlesource.com/chromiumos/project
