@@ -1,3 +1,6 @@
 [submodule "chromiumos/src/project_public"]
 	path = chromiumos/src/project_public
 	url = https://chromium.googlesource.com/chromiumos/project
+[submodule "chromiumos/src/overlays"]
+	path = chromiumos/src/overlays
+	url = https://chromium.googlesource.com/chromiumos/overlays/board-overlays
