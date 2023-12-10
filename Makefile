@@ -1,5 +1,7 @@
 
 regenerate:
+	git submodule init
+	git submodule update
 	[ -d generated ] && rm -r generated || true
 	mkdir -p generated
 	make generated/board_model_list.txt
