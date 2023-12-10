@@ -6,6 +6,7 @@ generate:
 	make generated/board_model_list.txt
 	make generated/board_list.txt
 	make generated/arch.txt
+	make generated/recovery_info.tsv
 
 .PHONY : fetch
 fetch:
@@ -36,3 +37,18 @@ fetched/recovery.conf:
 
 generated_noupload/puff_recovery: generated_noupload/recovery.conf
 	cd generated_noupload && wget `cat recovery.conf | grep puff | grep https | head -n 1 | cut -d '=' -f 2-`
+
+generated/recovery_info.tsv:
+	cat fetched/recovery.conf | \
+		grep -10 -E '^name' | \
+		tr '\n' '#' | \
+		sed -E 's/##/\n/g' | \
+		sed -E 's/$$/\n----/g' | \
+		sed -E 's/^.*#name=([^#]*).*#hwidmatch=[^#A-Za-z0-9]*([A-Za-z0-9]*).*#file=([^#]*).*$$/\1\n\2\n\3/' | \
+		sed -E 's/^chromeos_([^_]*)_([^_]*)_recovery.*$$/\1\n\2/g' | \
+		tr -d '\t' | \
+		tr '\n' '\t' | \
+		sed -E 's/----\t/\n/g' | \
+		awk -F'\t' '{print $$4 "\t" $$2 "\t" $$3 "\t" $$1;}' | \
+		sort | \
+		tee $@
