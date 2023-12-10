@@ -3,6 +3,7 @@ asurada
 auron
 beltino
 brask
+brox
 brya
 cherry
 cheza
@@ -45,6 +46,7 @@ poppy
 puff
 rambi
 rammus
+rauru
 reef
 rex
 rowan

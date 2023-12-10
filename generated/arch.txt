@@ -3,8 +3,8 @@ arm64-generic arm64
 asurada arm64
 atlas x86_64
 aurora x86_64
-bob arm64
 brask x86_64
+brox x86_64
 brya x86_64
 bubs arm64
 cherry64 arm64
@@ -29,7 +29,6 @@ hatch x86_64
 jacuzzi arm64
 kalista x86_64
 keeby x86_64
-kevin arm64
 kukui arm64
 majolica x86_64
 mushu x86_64
@@ -43,14 +42,12 @@ ovis x86_64
 passionfruit arm64
 puff x86_64
 pyro x86_64
-rainier arm64
 rammus x86_64
 reef x86_64
 reven x86_64
 rex x86_64
 sand x86_64
 sarien x86_64
-scarlet arm64
 shotzo x86_64
 skyrim x86_64
 snappy x86_64

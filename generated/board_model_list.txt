@@ -25,11 +25,13 @@ brask/kinox
 brask/kuldax
 brask/lisbon
 brask/moli
+brox/brox
 brya/adlrvp
 brya/anahera
 brya/banshee
 brya/brya
 brya/crota
+brya/dochi
 brya/felwinter
 brya/gimble
 brya/kano
@@ -74,6 +76,7 @@ coral/robo360
 coral/sailfin
 coral/santa
 coral/whitetip
+corsola/chinchou
 corsola/kingler
 corsola/krabby
 corsola/magikarp
@@ -92,6 +95,7 @@ dedede/boxy
 dedede/bugzzy
 dedede/corori2
 dedede/cret
+dedede/dexi
 dedede/dibbi
 dedede/drawcia
 dedede/galtic
@@ -237,6 +241,7 @@ nami/vayne
 nefario/dave
 nefario/nefario
 nissa/adlnrvp
+nissa/anraggar
 nissa/birdo
 nissa/craask
 nissa/craaskov
@@ -304,6 +309,7 @@ octopus/vitalin
 octopus/vorticon
 octopus/vortininja
 octopus/yorp
+ovis/deku
 ovis/ovis
 passionfruit/passionfruit
 peach/pi
@@ -347,6 +353,7 @@ rammus/leona
 rammus/shyvana
 rammus/shyvana-m
 rammus/volibear
+rauru/rauru
 reef/alan
 reef/basking
 reef/bigdaddy
