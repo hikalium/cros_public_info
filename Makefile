@@ -40,6 +40,7 @@ generated_noupload/puff_recovery: generated_noupload/recovery.conf
 
 generated/recovery_info.tsv:
 	cat fetched/recovery.conf | \
+		tail -n +5 | \
 		grep -10 -E '^name' | \
 		tr '\n' '#' | \
 		sed -E 's/##/\n/g' | \
