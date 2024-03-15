@@ -7,6 +7,7 @@ brask x86_64
 brox x86_64
 brya x86_64
 bubs arm64
+caroline x86_64
 cherry64 arm64
 cherry arm64
 coral x86_64
@@ -19,7 +20,6 @@ fizz-labstation x86_64
 fizz-moblab x86_64
 fizz-satlab x86_64
 fizz x86_64
-galaxy x86_64
 geralt arm64
 grunt x86_64
 guado x86_64
@@ -48,6 +48,7 @@ reven x86_64
 rex x86_64
 sand x86_64
 sarien x86_64
+scarlet arm64
 shotzo x86_64
 skyrim x86_64
 snappy x86_64

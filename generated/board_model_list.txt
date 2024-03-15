@@ -19,6 +19,7 @@ beltino/tricky
 beltino/zako
 brask/aurash
 brask/brask
+brask/bujia
 brask/gaelin
 brask/gladios
 brask/kinox
@@ -47,12 +48,14 @@ brya/taniks
 brya/vell
 brya/volmar
 brya/vyhar
+brya/xol
 cherry/cherry
 cherry/dojo
 cherry/tomato
 cheza/cheza
 constitution/constitution
 constitution/intrepid
+constitution/nova
 coral/astronaut
 coral/babymako
 coral/babymega
@@ -79,6 +82,7 @@ coral/whitetip
 corsola/chinchou
 corsola/kingler
 corsola/krabby
+corsola/kyogre
 corsola/magikarp
 corsola/ponyta
 corsola/steelix
@@ -97,6 +101,7 @@ dedede/corori2
 dedede/cret
 dedede/dexi
 dedede/dibbi
+dedede/dita
 dedede/drawcia
 dedede/galtic
 dedede/jslrvp
@@ -126,9 +131,6 @@ fizz/talon
 fizz/teemo
 fizz/twitch
 fizz/wukong
-galaxy/andromeda
-galaxy/milkyway
-galaxy/sombrero
 geralt/ciri
 geralt/geralt
 glados/caroline
@@ -245,6 +247,7 @@ nissa/anraggar
 nissa/birdo
 nissa/craask
 nissa/craaskov
+nissa/glassway
 nissa/gothrax
 nissa/joxer
 nissa/nereid
@@ -252,10 +255,12 @@ nissa/nivviks
 nissa/pirrha
 nissa/pujjo
 nissa/quandiso
+nissa/sundance
 nissa/uldren
 nissa/xivu
 nissa/xivur
 nissa/yaviks
+nissa/yavista
 oak/birch
 oak/elm
 oak/hana
@@ -392,6 +397,7 @@ slippy/peppy
 slippy/wolf
 staryu/starmie
 staryu/staryu
+staryu/wugtrio
 strago/banon
 strago/celes
 strago/cyan

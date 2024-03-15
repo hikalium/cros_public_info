@@ -15,7 +15,6 @@ dedede
 draco
 drallion
 fizz
-galaxy
 geralt
 glados
 gru
