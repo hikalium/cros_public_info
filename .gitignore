@@ -1,2 +1,4 @@
 generated_noupload
 fetched
+*.bin
+*.tar.xz
