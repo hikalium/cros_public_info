@@ -7,6 +7,7 @@ generate:
 	make generated/arch.txt
 	make generated/recovery_info.tsv
 	make generated/ls_of_chromiumos-image-archive.txt
+	make generated/ls_of_public_prebuilt_images_amd64-generic-vm-public.txt
 
 .PHONY : fetch
 fetch:
@@ -14,6 +15,7 @@ fetch:
 	mkdir -p fetched
 	make fetched/recovery.conf
 	make fetched/ls_of_chromiumos-image-archive.txt
+	make fetched/ls_of_public_prebuilt_images_amd64-generic-vm-public.txt
 
 .PHONY : update
 update:
@@ -35,6 +37,9 @@ fetched/recovery.conf:
 
 fetched/ls_of_chromiumos-image-archive.txt:
 	gsutil ls gs://chromiumos-image-archive | tee $@
+
+fetched/ls_of_public_prebuilt_images_amd64-generic-vm-public.txt:
+	gsutil ls gs://chromiumos-image-archive/amd64-generic-vm-public/ | tee $@
 
 generated/board_model_list.txt:
 	ls chromiumos/src/project_public/*/*/sw_build_config/platform/chromeos-config/generated/project-config.json | cut -d / -f 4,5 | sort -u | tee $@
@@ -64,5 +69,5 @@ generated/recovery_info.tsv:
 generated_noupload/puff_recovery: generated_noupload/recovery.conf
 	cd generated_noupload && wget `cat recovery.conf | grep puff | grep https | head -n 1 | cut -d '=' -f 2-`
 
-generated/ls_of_chromiumos-image-archive.txt:
-	cp fetched/ls_of_chromiumos-image-archive.txt $@
+generated/ls_of_%.txt:
+	cp fetched/ls_of_$*.txt $@
