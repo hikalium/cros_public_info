@@ -16,6 +16,7 @@ dedede x86_64
 drallion x86_64
 elm arm64
 eve x86_64
+ferrochrome arm64
 fizz-labstation x86_64
 fizz-moblab x86_64
 fizz-satlab x86_64
@@ -43,6 +44,7 @@ passionfruit arm64
 puff x86_64
 pyro x86_64
 rammus x86_64
+rauru arm64
 reef x86_64
 reven x86_64
 rex x86_64
@@ -58,6 +60,5 @@ strongbad arm64
 tael arm64
 tatl x86_64
 trogdor arm64
-variant-guado-labstation x86_64
 volteer x86_64
 zork x86_64

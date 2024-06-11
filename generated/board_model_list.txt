@@ -27,6 +27,8 @@ brask/kuldax
 brask/lisbon
 brask/moli
 brox/brox
+brox/greenbayupoc
+brox/lotso
 brya/adlrvp
 brya/anahera
 brya/banshee
@@ -85,8 +87,10 @@ corsola/krabby
 corsola/kyogre
 corsola/magikarp
 corsola/ponyta
+corsola/skitty
 corsola/steelix
 corsola/tentacruel
+corsola/veluza
 corsola/voltorb
 daisy/skate
 daisy/snow
@@ -123,6 +127,7 @@ draco/agah
 draco/draco
 drallion/drallion
 drallion/drallion360
+fatcat/fatcat
 fizz/fizz
 fizz/jax
 fizz/kench
@@ -252,10 +257,16 @@ nissa/gothrax
 nissa/joxer
 nissa/nereid
 nissa/nivviks
+nissa/norisa
+nissa/orisa
 nissa/pirrha
 nissa/pujjo
 nissa/quandiso
+nissa/riven
 nissa/sundance
+nissa/tereid
+nissa/tivviks
+nissa/trulo
 nissa/uldren
 nissa/xivu
 nissa/xivur
@@ -358,6 +369,7 @@ rammus/leona
 rammus/shyvana
 rammus/shyvana-m
 rammus/volibear
+rauru/navi
 rauru/rauru
 reef/alan
 reef/basking

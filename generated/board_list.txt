@@ -14,6 +14,7 @@ daisy
 dedede
 draco
 drallion
+fatcat
 fizz
 geralt
 glados

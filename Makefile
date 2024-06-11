@@ -1,3 +1,5 @@
+default: update
+
 .PHONY : generate
 generate:
 	[ -d generated ] && rm -r generated || true
