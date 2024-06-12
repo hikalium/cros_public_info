@@ -1,0 +1,467 @@
+arc-keymasterd stop/waiting
+arc-sdcard stop/waiting
+cdm-oemcrypto start/running, process 1549
+crash-reporter-early-init stop/waiting
+cros-camera-algo start/running, process 3260
+displaylink-driver stop/waiting
+easy-unlock stop/waiting
+failsafe-delay stop/waiting
+fwupdtool-activate stop/waiting
+smbproviderd stop/waiting
+spaced start/running, process 3043
+tpm_managerd start/running, process 1308
+udev start/running, process 209
+arc-kmsg-logger start/running, process 1834
+arc-removable-media-write stop/waiting
+arc-removable-media stop/waiting
+arc-system-mount start/running
+boot-services start/running
+cryptohomed-client stop/waiting
+daisydog start/running, process 781
+featured-chrome-restart stop/waiting
+googletts start/running
+memd start/running, process 3424
+midis stop/waiting
+ml-service (mojo_service) start/running, process 6225
+secagentd start/running, process 1847
+send-powerwash-metrics stop/waiting
+trim_filesystem stop/waiting
+u2fd start/running, process 2975
+virtual-file-provider-cgroup stop/waiting
+arc-appfuse-provider stop/waiting
+avahi start/running, process 2365
+boot-update-firmware start/running
+cras start/running, process 1912
+crosdns stop/waiting
+cupsd start/running, process 1551
+failsafe start/running
+modemmanager start/running, process 1905
+permission_broker start/running, process 1873
+send-mount-encrypted-metrics stop/waiting
+timberslide (/sys/kernel/debug/cros_ec/console_log) start/running, process 3224
+tpm-firmware-check stop/waiting
+usbguard-on-unlock stop/waiting
+usbguard stop/waiting
+anomaly-detector start/running, process 3047
+auditd start/running, process 439
+collect-early-logs stop/waiting
+cros-ec-accel stop/waiting
+dbus start/running, process 563
+ec-report-tpsreset stop/waiting
+iioservice start/running, process 719
+image-burner stop/waiting
+log-bootid-on-boot stop/waiting
+network-services start/running
+oobe_config_restore start/running, process 1471
+pca_agentd start/running, process 1067
+swap_management start/running, process 3272
+arc-lifetime start/running
+arc-myfiles-read stop/waiting
+arc-obb-mounter stop/waiting
+arcpp-post-login-services stop/waiting
+crx-import stop/waiting
+halt stop/waiting
+imageloader stop/waiting
+login stop/waiting
+pre-shutdown stop/waiting
+reboot stop/waiting
+regulatory-domain stop/waiting
+send-recovery-metrics stop/waiting
+swap_stop stop/waiting
+traced_probes start/running, process 3651
+ui-collect-machine-info stop/waiting
+arc-myfiles stop/waiting
+crash-sender-login stop/waiting
+cros-camera-libfs start/running
+featured start/running, process 1852
+fwupd start/running, process 3304
+machine-id-regen-periodic start/running, process 2992
+metrics_daemon start/running, process 3411
+metrics_library start/running
+secanomalyd start/running, process 1853
+shill-start-user-session stop/waiting
+smi-usbdisplay stop/waiting
+wpasupplicant start/running, process 738
+activate_date start/running, process 3294
+arc-adbd stop/waiting
+arc-myfiles-default stop/waiting
+arc-ureadahead stop/waiting
+attestationd start/running, process 1509
+lacros-unmounter stop/waiting
+p2p stop/waiting
+seneschal stop/waiting
+ui-init-late stop/waiting
+virtual-file-provider stop/waiting
+vpd-icc stop/waiting
+arc-file-syncer start/running, process 1820
+arc-update-restorecon-last stop/waiting
+boot-complete start/running
+bootlockboxd start/running, process 1403
+crash-boot-collect stop/waiting
+crash-sender start/running, process 1854
+cros-camera-failsafe stop/waiting
+cros_healthd start/running, process 1931
+device_managementd start/running, process 1405
+hardware_verifier-dbus stop/waiting
+send-boot-mode stop/waiting
+shill_stop_waiter stop/waiting
+tpm-probe stop/waiting
+traced start/running, process 3130
+udev-boot start/running
+apk-cache-cleaner start/running, process 1856
+arc-removable-media-read stop/waiting
+arc-sdcard-mount stop/waiting
+arc-stale-directory-remover stop/waiting
+cros-camera start/running, process 3247
+dlcservice start/running, process 1940
+ecloggers stop/waiting
+imageloader-init stop/waiting
+lockbox-cache start/running
+pre-startup stop/waiting
+private_computing stop/waiting
+quickoffice start/running
+resourced start/running, process 3178
+runtime_probe stop/waiting
+startup stop/waiting
+timberslide-watcher stop/waiting
+ui-respawn stop/waiting
+uinput stop/waiting
+widevine-cdm stop/waiting
+ac-only stop/waiting
+arc-boot-continue stop/waiting
+arc-myfiles-full stop/waiting
+arc-removable-media-default stop/waiting
+arc-removable-media-full stop/waiting
+cgroups stop/waiting
+chapsd start/running, process 1386
+conntrackd start/running, process 1924
+cras-dev stop/waiting
+cros_configfs start/running
+iptables stop/waiting
+kdump-init stop/waiting
+machine-info start/running
+patchpanel start/running, process 1975
+pstore stop/waiting
+send-tpm-firmware-update-metrics stop/waiting
+bluetoothlog stop/waiting
+boot-alert-ready stop/waiting
+boot-splash stop/waiting
+brltty stop/waiting
+cryptohomed start/running, process 1569
+dns-proxy start/running, process 1884
+lorgnette stop/waiting
+powerd start/running, process 1199
+preload-network stop/waiting
+printscanmgr stop/waiting
+sysrq-init stop/waiting
+system-proxy stop/waiting
+upstart-socket-bridge start/running, process 2028
+usbguard-on-lock stop/waiting
+arc-remove-data stop/waiting
+crash-reporter stop/waiting
+debugd start/running, process 780
+hwsec-shutdown-signals stop/waiting
+ip6tables stop/waiting
+missived start/running, process 3129
+openssh-server start/running, process 2966
+send-kernel-errors stop/waiting
+shill-stop-user-session stop/waiting
+tcsd start/running, process 1187
+tlsdated start/running, process 3293
+vpd-log stop/waiting
+chunneld stop/waiting
+dlp stop/waiting
+hardware_verifier stop/waiting
+kerberosd stop/waiting
+logout stop/waiting
+mount-encrypted stop/waiting
+rgbkbd stop/waiting
+shill start/running, process 1045
+trim start/running, process 3174
+udev-trigger stop/waiting
+arc-myfiles-write stop/waiting
+bootsplash stop/waiting
+cpufreq stop/waiting
+heartd stop/waiting
+ippusb-bridge stop/waiting
+libsegmentation stop/waiting
+mojo_service_manager start/running, process 670
+report-power-metrics stop/waiting
+send-disk-metrics stop/waiting
+structured_metrics stop/waiting
+swap_start stop/waiting
+system-services start/running
+tpm-firmware-update stop/waiting
+update-engine start/running, process 1995
+vm_concierge stop/waiting
+arc-prepare-host-generated-dir stop/waiting
+arcpp-media-sharing-services stop/waiting
+firmware-version stop/waiting
+fwupdtool-update stop/waiting
+imageloader-shutdown stop/waiting
+mtpd start/running, process 1896
+powervr-select-module stop/waiting
+send-boot-metrics stop/waiting
+vm_cicerone stop/waiting
+vmlog_forwarder stop/waiting
+arc-set-time stop/waiting
+bluetoothd start/running, process 706
+cros-disks start/running, process 1953
+machine-id-regen-network stop/waiting
+mount-ash-chrome stop/waiting
+printscan-debug-cleanup stop/waiting
+shill-event stop/waiting
+shill_respawn stop/waiting
+syslog start/running, process 445
+temp_logger start/running, process 3018
+thermal_zone stop/waiting
+udev-trigger-codec stop/waiting
+udev-trigger-early stop/waiting
+auth-failure stop/waiting
+init-homedirs stop/waiting
+install-completed start/running
+lacros-mounter stop/waiting
+log-rotate start/running, process 2039
+oobe_config_save stop/waiting
+report-boot-complete stop/waiting
+send-boot-elog-metrics stop/waiting
+send-uptime-metrics stop/waiting
+sslh start/running, process 3044
+ui start/running, process 1534
+ui_stop_waiter stop/waiting
+ureadahead stop/waiting
+usb_bouncer stop/waiting
+hana-rev5 ~ # initctl list
+arc-keymasterd stop/waiting
+arc-sdcard stop/waiting
+cdm-oemcrypto start/running, process 1549
+crash-reporter-early-init stop/waiting
+cros-camera-algo start/running, process 3260
+displaylink-driver stop/waiting
+easy-unlock stop/waiting
+failsafe-delay stop/waiting
+fwupdtool-activate stop/waiting
+smbproviderd stop/waiting
+spaced start/running, process 3043
+tpm_managerd start/running, process 1308
+udev start/running, process 209
+arc-kmsg-logger start/running, process 1834
+arc-removable-media-write stop/waiting
+arc-removable-media stop/waiting
+arc-system-mount start/running
+boot-services start/running
+cryptohomed-client stop/waiting
+daisydog start/running, process 781
+featured-chrome-restart stop/waiting
+googletts start/running
+memd start/running, process 3424
+midis stop/waiting
+ml-service (mojo_service) start/running, process 6225
+secagentd start/running, process 1847
+send-powerwash-metrics stop/waiting
+trim_filesystem stop/waiting
+u2fd start/running, process 2975
+virtual-file-provider-cgroup stop/waiting
+arc-appfuse-provider stop/waiting
+avahi start/running, process 2365
+boot-update-firmware start/running
+cras start/running, process 1912
+crosdns stop/waiting
+cupsd start/running, process 1551
+failsafe start/running
+modemmanager start/running, process 1905
+permission_broker start/running, process 1873
+send-mount-encrypted-metrics stop/waiting
+timberslide (/sys/kernel/debug/cros_ec/console_log) start/running, process 3224
+tpm-firmware-check stop/waiting
+usbguard-on-unlock stop/waiting
+usbguard stop/waiting
+anomaly-detector start/running, process 3047
+auditd start/running, process 439
+collect-early-logs stop/waiting
+cros-ec-accel stop/waiting
+dbus start/running, process 563
+ec-report-tpsreset stop/waiting
+iioservice start/running, process 719
+image-burner stop/waiting
+log-bootid-on-boot stop/waiting
+network-services start/running
+oobe_config_restore start/running, process 1471
+pca_agentd start/running, process 1067
+swap_management start/running, process 3272
+arc-lifetime start/running
+arc-myfiles-read stop/waiting
+arc-obb-mounter stop/waiting
+arcpp-post-login-services stop/waiting
+crx-import stop/waiting
+halt stop/waiting
+imageloader stop/waiting
+login stop/waiting
+pre-shutdown stop/waiting
+reboot stop/waiting
+regulatory-domain stop/waiting
+send-recovery-metrics stop/waiting
+swap_stop stop/waiting
+traced_probes start/running, process 3651
+ui-collect-machine-info stop/waiting
+arc-myfiles stop/waiting
+crash-sender-login stop/waiting
+cros-camera-libfs start/running
+featured start/running, process 1852
+fwupd start/running, process 3304
+machine-id-regen-periodic start/running, process 2992
+metrics_daemon start/running, process 3411
+metrics_library start/running
+secanomalyd start/running, process 1853
+shill-start-user-session stop/waiting
+smi-usbdisplay stop/waiting
+wpasupplicant start/running, process 738
+activate_date start/running, process 3294
+arc-adbd stop/waiting
+arc-myfiles-default stop/waiting
+arc-ureadahead stop/waiting
+attestationd start/running, process 1509
+lacros-unmounter stop/waiting
+p2p stop/waiting
+seneschal stop/waiting
+ui-init-late stop/waiting
+virtual-file-provider stop/waiting
+vpd-icc stop/waiting
+arc-file-syncer start/running, process 1820
+arc-update-restorecon-last stop/waiting
+boot-complete start/running
+bootlockboxd start/running, process 1403
+crash-boot-collect stop/waiting
+crash-sender start/running, process 1854
+cros-camera-failsafe stop/waiting
+cros_healthd start/running, process 1931
+device_managementd start/running, process 1405
+hardware_verifier-dbus stop/waiting
+send-boot-mode stop/waiting
+shill_stop_waiter stop/waiting
+tpm-probe stop/waiting
+traced start/running, process 3130
+udev-boot start/running
+apk-cache-cleaner start/running, process 1856
+arc-removable-media-read stop/waiting
+arc-sdcard-mount stop/waiting
+arc-stale-directory-remover stop/waiting
+cros-camera start/running, process 3247
+dlcservice start/running, process 1940
+ecloggers stop/waiting
+imageloader-init stop/waiting
+lockbox-cache start/running
+pre-startup stop/waiting
+private_computing stop/waiting
+quickoffice start/running
+resourced start/running, process 3178
+runtime_probe stop/waiting
+startup stop/waiting
+timberslide-watcher stop/waiting
+ui-respawn stop/waiting
+uinput stop/waiting
+widevine-cdm stop/waiting
+ac-only stop/waiting
+arc-boot-continue stop/waiting
+arc-myfiles-full stop/waiting
+arc-removable-media-default stop/waiting
+arc-removable-media-full stop/waiting
+cgroups stop/waiting
+chapsd start/running, process 1386
+conntrackd start/running, process 1924
+cras-dev stop/waiting
+cros_configfs start/running
+iptables stop/waiting
+kdump-init stop/waiting
+machine-info start/running
+patchpanel start/running, process 1975
+pstore stop/waiting
+send-tpm-firmware-update-metrics stop/waiting
+bluetoothlog stop/waiting
+boot-alert-ready stop/waiting
+boot-splash stop/waiting
+brltty stop/waiting
+cryptohomed start/running, process 1569
+dns-proxy start/running, process 1884
+lorgnette stop/waiting
+powerd start/running, process 1199
+preload-network stop/waiting
+printscanmgr stop/waiting
+sysrq-init stop/waiting
+system-proxy stop/waiting
+upstart-socket-bridge start/running, process 2028
+usbguard-on-lock stop/waiting
+arc-remove-data stop/waiting
+crash-reporter stop/waiting
+debugd start/running, process 780
+hwsec-shutdown-signals stop/waiting
+ip6tables stop/waiting
+missived start/running, process 3129
+openssh-server start/running, process 2966
+send-kernel-errors stop/waiting
+shill-stop-user-session stop/waiting
+tcsd start/running, process 1187
+tlsdated start/running, process 3293
+vpd-log stop/waiting
+chunneld stop/waiting
+dlp stop/waiting
+hardware_verifier stop/waiting
+kerberosd stop/waiting
+logout stop/waiting
+mount-encrypted stop/waiting
+rgbkbd stop/waiting
+shill start/running, process 1045
+trim start/running, process 3174
+udev-trigger stop/waiting
+arc-myfiles-write stop/waiting
+bootsplash stop/waiting
+cpufreq stop/waiting
+heartd stop/waiting
+ippusb-bridge stop/waiting
+libsegmentation stop/waiting
+mojo_service_manager start/running, process 670
+report-power-metrics stop/waiting
+send-disk-metrics stop/waiting
+structured_metrics stop/waiting
+swap_start stop/waiting
+system-services start/running
+tpm-firmware-update stop/waiting
+update-engine start/running, process 1995
+vm_concierge stop/waiting
+arc-prepare-host-generated-dir stop/waiting
+arcpp-media-sharing-services stop/waiting
+firmware-version stop/waiting
+fwupdtool-update stop/waiting
+imageloader-shutdown stop/waiting
+mtpd start/running, process 1896
+powervr-select-module stop/waiting
+send-boot-metrics stop/waiting
+vm_cicerone stop/waiting
+vmlog_forwarder stop/waiting
+arc-set-time stop/waiting
+bluetoothd start/running, process 706
+cros-disks start/running, process 1953
+machine-id-regen-network stop/waiting
+mount-ash-chrome stop/waiting
+printscan-debug-cleanup stop/waiting
+shill-event stop/waiting
+shill_respawn stop/waiting
+syslog start/running, process 445
+temp_logger start/running, process 3018
+thermal_zone stop/waiting
+udev-trigger-codec stop/waiting
+udev-trigger-early stop/waiting
+auth-failure stop/waiting
+init-homedirs stop/waiting
+install-completed start/running
+lacros-mounter stop/waiting
+log-rotate start/running, process 2039
+oobe_config_save stop/waiting
+report-boot-complete stop/waiting
+send-boot-elog-metrics stop/waiting
+send-uptime-metrics stop/waiting
+sslh start/running, process 3044
+ui start/running, process 1534
+ui_stop_waiter stop/waiting
+ureadahead stop/waiting
+usb_bouncer stop/waiting
