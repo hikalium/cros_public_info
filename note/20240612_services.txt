@@ -1,0 +1,149 @@
+hana-rev5 ~ # initctl list | grep -v -e stop -e syslog -e openssh-server -e network-services -e wpasupplicant -e sslh -e shill -e udev -e patchpanel -e mojo_service_manager -e system-services -e upstart -e timberslide -e failsafe -e dbus -e boot-services | sort
+activate_date start/running, process 3180
+anomaly-detector start/running, process 2937
+apk-cache-cleaner start/running, process 1806
+arc-file-syncer start/running, process 1795
+arc-kmsg-logger start/running, process 1965
+arc-lifetime start/running
+arc-system-mount start/running
+attestationd start/running, process 1372
+auditd start/running, process 442
+avahi start/running, process 2001
+bluetoothd start/running, process 638
+boot-complete start/running
+boot-update-firmware start/running
+bootlockboxd start/running, process 1275
+cdm-oemcrypto start/running, process 1512
+chapsd start/running, process 1257
+conntrackd start/running, process 1927
+cras start/running, process 1830
+crash-sender start/running, process 1805
+cros-camera start/running, process 3126
+cros-camera-algo start/running, process 3060
+cros-camera-libfs start/running
+cros-disks start/running, process 1973
+cros_configfs start/running
+cros_healthd start/running, process 1921
+cryptohomed start/running, process 1519
+cupsd start/running, process 1503
+daisydog start/running, process 713
+debugd start/running, process 649
+device_managementd start/running, process 1315
+dlcservice start/running, process 1954
+dns-proxy start/running, process 1862
+featured start/running, process 1802
+fwupd start/running, process 3140
+googletts start/running
+iioservice start/running, process 657
+install-completed start/running
+lockbox-cache start/running
+log-rotate start/running, process 2023
+machine-id-regen-periodic start/running, process 2873
+machine-info start/running
+memd start/running, process 3221
+metrics_daemon start/running, process 3206
+metrics_library start/running
+missived start/running, process 2999
+modemmanager start/running, process 1909
+mtpd start/running, process 1861
+oobe_config_restore start/running, process 1350
+pca_agentd start/running, process 1105
+permission_broker start/running, process 1824
+powerd start/running, process 1098
+quickoffice start/running
+resourced start/running, process 3012
+secagentd start/running, process 1797
+secanomalyd start/running, process 1803
+spaced start/running, process 2929
+swap_management start/running, process 3091
+tcsd start/running, process 923
+temp_logger start/running, process 2903
+tlsdated start/running, process 3179
+tpm_managerd start/running, process 1140
+traced start/running, process 3000
+traced_probes start/running, process 3501
+trim start/running, process 3054
+u2fd start/running, process 2853
+ui start/running, process 1490
+update-engine start/running, process 1952
+
+hana-rev5 ~ # initctl list | grep -v -e stop -e syslog -e openssh-server -e network-services -e wpasupplicant -e sslh -e shill -e udev -e patchpanel -e mojo_service_manager -e system-services -e upstart -e timberslide -e failsafe -e dbus -e boot-services | sort | cut -d ' ' -f 1 | xargs -I {} -- bash -c 'sleep 1; stop {};'
+activate_date stop/waiting
+anomaly-detector stop/waiting
+apk-cache-cleaner stop/waiting
+arc-file-syncer stop/waiting
+arc-kmsg-logger stop/waiting
+arc-lifetime stop/waiting
+arc-system-mount stop/waiting
+attestationd stop/waiting
+auditd stop/waiting
+avahi stop/waiting
+bluetoothd stop/waiting
+boot-complete stop/waiting
+boot-update-firmware stop/waiting
+bootlockboxd stop/waiting
+cdm-oemcrypto stop/waiting
+chapsd stop/waiting
+conntrackd stop/waiting
+cras stop/waiting
+crash-sender stop/waiting
+cros-camera stop/waiting
+cros-camera-algo stop/waiting
+cros-camera-libfs stop/waiting
+cros-disks stop/waiting
+cros_configfs stop/waiting
+cros_healthd stop/waiting
+cryptohomed stop/waiting
+cupsd stop/waiting
+daisydog stop/waiting
+debugd stop/waiting
+device_managementd stop/waiting
+dlcservice stop/waiting
+dns-proxy stop/waiting
+featured stop/waiting
+fwupd stop/waiting
+googletts stop/waiting
+iioservice stop/waiting
+install-completed stop/waiting
+lockbox-cache stop/waiting
+log-rotate stop/waiting
+machine-id-regen-periodic stop/waiting
+machine-info stop/waiting
+memd stop/waiting
+metrics_daemon stop/waiting
+metrics_library stop/waiting
+missived stop/waiting
+modemmanager stop/waiting
+mtpd stop/waiting
+oobe_config_restore stop/waiting
+pca_agentd stop/waiting
+permission_broker stop/waiting
+powerd stop/waiting
+quickoffice stop/waiting
+resourced stop/waiting
+secagentd stop/waiting
+secanomalyd stop/waiting
+spaced stop/waiting
+swap_management stop/waiting
+tcsd stop/waiting
+temp_logger stop/waiting
+tlsdated stop/waiting
+tpm_managerd stop/waiting
+traced stop/waiting
+stop: Unknown instance: 
+trim stop/waiting
+u2fd stop/waiting
+ui stop/waiting
+update-engine stop/waiting
+
+hana-rev5 ~ # ps -eo pid,pmem,pcpu,majflt,minflt,nice,pri,rss,ucomm,etime,rtprio,cputime --sort=-cputime | head -n 10
+    PID %MEM %CPU MAJFLT MINFLT  NI PRI   RSS COMMAND             ELAPSED RTPRIO     TIME
+   2867  0.0  0.9      0      0   - 140     0 sugov:2               30:34      0 00:00:18
+   2872  0.0  0.5      0      0   - 140     0 sugov:0               30:34      0 00:00:10
+    156  0.0  0.4      0      0   -  90     0 cros_ec_spi_hig       30:50     50 00:00:07
+      9  0.0  0.2      0      0   0  19     0 kworker/u8:0-ev       30:50      - 00:00:04
+    150  0.0  0.2      0      0   0  19     0 kworker/u8:5-kc       30:50      - 00:00:04
+    536  0.0  0.1      0   1653   0  19  2652 dbus-daemon           30:47      - 00:00:03
+      1  0.0  0.1     54  56334   0  19  3596 init                  30:50      - 00:00:02
+    136  0.0  0.1      0      0   -  90     0 spi0                  30:50     50 00:00:02
+   1078  0.5  0.1     36   1644   0  19 22164 shill                 30:46      - 00:00:02
