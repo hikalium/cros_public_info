@@ -1,0 +1,568 @@
+hana-rev5 ~ # cat /etc/lsb-release 
+CHROMEOS_ARC_ANDROID_SDK_VERSION=30
+CHROMEOS_ARC_VERSION=11772594
+CHROMEOS_AUSERVER=https://tools.google.com/service/update2
+CHROMEOS_BOARD_APPID={AAE972E1-A913-C860-B7AB-BF7F267F199B}
+CHROMEOS_CANARY_APPID={90F229CE-83E2-4FAF-8479-E368A34938B1}
+CHROMEOS_DEVSERVER=
+CHROMEOS_RELEASE_APPID={AAE972E1-A913-C860-B7AB-BF7F267F199B}
+CHROMEOS_RELEASE_BOARD=hana-signed-mp-v10keys
+CHROMEOS_RELEASE_BRANCH_NUMBER=0
+CHROMEOS_RELEASE_BUILDER_PATH=hana-release/R126-15871.0.0
+CHROMEOS_RELEASE_BUILD_NUMBER=15871
+CHROMEOS_RELEASE_BUILD_TYPE=Official Build
+CHROMEOS_RELEASE_CHROME_MILESTONE=126
+CHROMEOS_RELEASE_DESCRIPTION=15871.0.0 (Official Build) dev-channel hana 
+CHROMEOS_RELEASE_KEYSET=mp-v10
+CHROMEOS_RELEASE_NAME=Chrome OS
+CHROMEOS_RELEASE_PATCH_NUMBER=0
+CHROMEOS_RELEASE_TRACK=dev-channel
+CHROMEOS_RELEASE_UNIBUILD=1
+CHROMEOS_RELEASE_VERSION=15871.0.0
+DEVICETYPE=CHROMEBOOK
+GOOGLE_RELEASE=15871.0.0
+
+hana-rev5 /mnt # find /mnt/stateful_partition/ | xargs -I {} -- lsof {}
+COMMAND    PID       USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+auditd     439       root    4w   REG  254,0   387066 423585 /var/log/audit/audit.log
+rsyslogd   445     syslog    9w   REG  254,0   259494 423563 /var/log/messages
+rsyslogd   445     syslog   10w   REG  254,0   292862 423560 /var/log/arc.log
+rsyslogd   445     syslog   11w   REG  254,0    68522 423564 /var/log/net.log
+rsyslogd   445     syslog   12w   REG  254,0     2788 423561 /var/log/bluetooth.log
+rsyslogd   445     syslog   15w   REG  254,0     1282 423565 /var/log/secure
+rsyslogd   445     syslog   16w   REG  254,0      380 423567 /var/log/upstart.log
+rsyslogd   445     syslog   17w   REG  254,0     2338 423550 /var/log/secagentd.log
+rsyslogd   445     syslog   20w   REG  254,0     6438 423566 /var/log/tlsdate.log
+rsyslogd   445     syslog   21w   REG  254,0    20821 423711 /var/log/fwupd.log
+tcsd      1187        tss    5u   REG  254,0      606 423603 /var/lib/tpm/system.data
+powerd    1199      power    1w   REG  254,0     1336 423601 /var/log/powerd.out
+powerd    1199      power    2w   REG  254,0     1336 423601 /var/log/powerd.out
+powerd    1199      power    4w   REG  254,0    43518 423608 /var/log/power_manager/powerd.20240611-235205
+chapsd    1386      chaps   16w   REG  254,0      151 423625 /var/lib/chaps/database/LOG
+chapsd    1386      chaps   17uW  REG  254,0        0 423626 /var/lib/chaps/database/LOCK
+chapsd    1386      chaps   18w   REG  254,0     2407 423646 /var/lib/chaps/database/000003.log
+chapsd    1386      chaps   19w   REG  254,0       50 423647 /var/lib/chaps/database/MANIFEST-000002
+session_m 1534       root    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+session_m 1534       root    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1561    chronos  mem    REG  254,0 22927588  65316 /home/chronos/Safe Browsing/UrlSoceng.store.4_13362623779041068
+chrome    1561    chronos  mem    REG  254,0  1073912  65314 /home/chronos/Safe Browsing/UrlMalBin.store.4_13362623775918908
+chrome    1561    chronos  mem    REG  254,0  1926848  65310 /home/chronos/Safe Browsing/ChromeExtMalware.store.32_13362623775481488
+chrome    1561    chronos  mem    REG  254,0   324032  65326 /home/chronos/Safe Browsing/UrlHighConfidenceAllowlist.store.32_13362623783978356
+chrome    1561    chronos  mem    REG  254,0   191324  65324 /home/chronos/Safe Browsing/UrlSubresourceFilter.store.4_13362623783944441
+chrome    1561    chronos  mem    REG  254,0   224008  65312 /home/chronos/Safe Browsing/UrlMalware.store.4_13362623775661806
+chrome    1561    chronos  mem    REG  254,0   127876  65302 /home/chronos/Safe Browsing/UrlUws.store.4_13362623775455865
+chrome    1561    chronos  mem    REG  254,0   262512  65255 /home/chronos/GraphiteDawnCache/index
+chrome    1561    chronos  mem    REG  254,0   262512  65250 /home/chronos/GrShaderCache/index
+chrome    1561    chronos  mem    REG  254,0   124928  65194 /home/chronos/Default/Web Data
+chrome    1561    chronos  mem-w  REG  254,0   163840  65167 /home/chronos/Default/History
+chrome    1561    chronos  mem    REG  254,0   262512  65162 /home/chronos/ShaderCache/index
+chrome    1561    chronos  DEL    REG  254,0           65157 /home/chronos/BrowserMetrics/BrowserMetrics-6668E327-619.pma
+chrome    1561    chronos  mem    REG  254,0    37312  65328 /home/chronos/Safe Browsing/UrlCsdDownloadAllowlist.store.32_13362623783997569
+chrome    1561    chronos  mem    REG  254,0    50504  65322 /home/chronos/Safe Browsing/UrlBilling.store.4_13362623783916522
+chrome    1561    chronos  mem-w  REG  254,0    49152  65298 /home/chronos/first_party_sets.db
+chrome    1561    chronos  mem    REG  254,0    45056  65300 /home/chronos/Default/Network Action Predictor
+chrome    1561    chronos  mem    REG  254,0     8192  65258 /home/chronos/GraphiteDawnCache/data_3
+chrome    1561    chronos  mem    REG  254,0     8192  65257 /home/chronos/GraphiteDawnCache/data_2
+chrome    1561    chronos  mem    REG  254,0   270336  65256 /home/chronos/GraphiteDawnCache/data_1
+chrome    1561    chronos  mem    REG  254,0     8192  65246 /home/chronos/GraphiteDawnCache/data_0
+chrome    1561    chronos  mem    REG  254,0  4202496  65254 /home/chronos/GrShaderCache/data_3
+chrome    1561    chronos  mem    REG  254,0      832  65330 /home/chronos/Safe Browsing/UrlCsdAllowlist.store.32_13362623784001587
+chrome    1561    chronos  mem    REG  254,0    16384  65293 /home/chronos/Default/heavy_ad_intervention_opt_out.db
+chrome    1561    chronos  mem    REG  254,0     4036  65331 /home/chronos/Safe Browsing/UrlCsdAllowlist.store.4_13362623784001844
+chrome    1561    chronos  mem    REG  254,0      628  65320 /home/chronos/Safe Browsing/ChromeUrlClientIncident.store.4_13362623783909523
+chrome    1561    chronos  mem    REG  254,0      980  65318 /home/chronos/Safe Browsing/UrlSuspiciousSite.store.4_13362623783907622
+chrome    1561    chronos  mem    REG  254,0  1056768  65253 /home/chronos/GrShaderCache/data_2
+chrome    1561    chronos  mem    REG  254,0    20480  65220 /home/chronos/Default/Favicons
+chrome    1561    chronos  mem    REG  254,0   270336  65252 /home/chronos/GrShaderCache/data_1
+chrome    1561    chronos  mem    REG  254,0    45056  65251 /home/chronos/GrShaderCache/data_0
+chrome    1561    chronos  mem    REG  254,0     8192  65166 /home/chronos/ShaderCache/data_3
+chrome    1561    chronos  mem    REG  254,0     8192  65165 /home/chronos/ShaderCache/data_2
+chrome    1561    chronos  mem    REG  254,0   270336  65164 /home/chronos/ShaderCache/data_1
+chrome    1561    chronos  mem    REG  254,0     8192  65163 /home/chronos/ShaderCache/data_0
+chrome    1561    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1561    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1561    chronos    4w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1561    chronos    6u   REG  254,0  4194304  65157 /home/chronos/BrowserMetrics/BrowserMetrics-6668E327-619.pma (deleted)
+chrome    1561    chronos   55u   REG  254,0     8192  65163 /home/chronos/ShaderCache/data_0
+chrome    1561    chronos   62u   REG  254,0   262512  65162 /home/chronos/ShaderCache/index
+chrome    1561    chronos   65u   REG  254,0   270336  65164 /home/chronos/ShaderCache/data_1
+chrome    1561    chronos   66u   REG  254,0     8192  65165 /home/chronos/ShaderCache/data_2
+chrome    1561    chronos   67u   REG  254,0     8192  65166 /home/chronos/ShaderCache/data_3
+chrome    1561    chronos   86w   REG  254,0      147  65185 /home/chronos/Default/Sync Data/LevelDB/LOG
+chrome    1561    chronos   90u   REG  254,0   131072  65283 /home/chronos/Default/Visited Links
+chrome    1561    chronos   91uw  REG  254,0   163840  65167 /home/chronos/Default/History
+chrome    1561    chronos   92w   REG  254,0      147  65219 /home/chronos/Default/Extension Scripts/LOG
+chrome    1561    chronos   93uW  REG  254,0        0  65186 /home/chronos/Default/Sync Data/LevelDB/LOCK
+chrome    1561    chronos   94w   REG  254,0       46  65208 /home/chronos/Default/Sync Data/LevelDB/000003.log
+chrome    1561    chronos   95w   REG  254,0      159  65191 /home/chronos/Default/Site Characteristics Database/LOG
+chrome    1561    chronos   96uW  REG  254,0        0  65189 /home/chronos/Default/Local Storage/leveldb/LOCK
+chrome    1561    chronos   97uW  REG  254,0        0  65192 /home/chronos/Default/Site Characteristics Database/LOCK
+chrome    1561    chronos   98w   REG  254,0       40  65217 /home/chronos/Default/Site Characteristics Database/000003.log
+chrome    1561    chronos   99w   REG  254,0       50  65209 /home/chronos/Default/Sync Data/LevelDB/MANIFEST-000002
+chrome    1561    chronos  100u   REG  254,0   124928  65194 /home/chronos/Default/Web Data
+chrome    1561    chronos  101u   REG  254,0        0  65195 /home/chronos/Default/Web Data-journal
+chrome    1561    chronos  102u   REG  254,0    20480  65220 /home/chronos/Default/Favicons
+chrome    1561    chronos  103w   REG  254,0      145  65211 /home/chronos/Default/Extension Rules/LOG
+chrome    1561    chronos  104uW  REG  254,0        0  65212 /home/chronos/Default/Extension Rules/LOCK
+chrome    1561    chronos  105u   REG  254,0        0  65221 /home/chronos/Default/Favicons-journal
+chrome    1561    chronos  106w   REG  254,0       50  65218 /home/chronos/Default/Site Characteristics Database/MANIFEST-000002
+chrome    1561    chronos  107w   REG  254,0      152  65205 /home/chronos/Default/Extension Rules/000003.log
+chrome    1561    chronos  108w   REG  254,0       50  65222 /home/chronos/Default/Extension Rules/MANIFEST-000002
+chrome    1561    chronos  109uW  REG  254,0        0  65245 /home/chronos/Default/Extension Scripts/LOCK
+chrome    1561    chronos  110w   REG  254,0       50  65247 /home/chronos/Default/Extension Scripts/MANIFEST-000002
+chrome    1561    chronos  112u   REG  254,0  4202496  65254 /home/chronos/GrShaderCache/data_3
+chrome    1561    chronos  114u   REG  254,0   262512  65250 /home/chronos/GrShaderCache/index
+chrome    1561    chronos  115w   REG  254,0       57  65215 /home/chronos/Default/Extension Scripts/000003.log
+chrome    1561    chronos  116u   REG  254,0    45056  65251 /home/chronos/GrShaderCache/data_0
+chrome    1561    chronos  117u   REG  254,0   270336  65252 /home/chronos/GrShaderCache/data_1
+chrome    1561    chronos  118u   REG  254,0  1056768  65253 /home/chronos/GrShaderCache/data_2
+chrome    1561    chronos  119u   REG  254,0   270336  65256 /home/chronos/GraphiteDawnCache/data_1
+chrome    1561    chronos  122u   REG  254,0     8192  65257 /home/chronos/GraphiteDawnCache/data_2
+chrome    1561    chronos  123u   REG  254,0   262512  65255 /home/chronos/GraphiteDawnCache/index
+chrome    1561    chronos  124u   REG  254,0     8192  65246 /home/chronos/GraphiteDawnCache/data_0
+chrome    1561    chronos  126u   REG  254,0     8192  65258 /home/chronos/GraphiteDawnCache/data_3
+chrome    1561    chronos  129r   REG  254,0   127876  65302 /home/chronos/Safe Browsing/UrlUws.store.4_13362623775455865
+chrome    1561    chronos  131u   REG  254,0     8720  65168 /home/chronos/Default/History-journal
+chrome    1561    chronos  140w   REG  254,0      154  65261 /home/chronos/Default/shared_proto_db/metadata/LOG
+chrome    1561    chronos  141w   REG  254,0      145  65285 /home/chronos/Default/Extension State/LOG
+chrome    1561    chronos  142uW  REG  254,0        0  65262 /home/chronos/Default/shared_proto_db/metadata/LOCK
+chrome    1561    chronos  144w   REG  254,0      300  65275 /home/chronos/Default/shared_proto_db/metadata/000003.log
+chrome    1561    chronos  145w   REG  254,0       50  65276 /home/chronos/Default/shared_proto_db/metadata/MANIFEST-000002
+chrome    1561    chronos  146u   REG  254,0    16384  65293 /home/chronos/Default/heavy_ad_intervention_opt_out.db
+chrome    1561    chronos  147r   REG  254,0 22927588  65316 /home/chronos/Safe Browsing/UrlSoceng.store.4_13362623779041068
+chrome    1561    chronos  148r   REG  254,0  1926848  65310 /home/chronos/Safe Browsing/ChromeExtMalware.store.32_13362623775481488
+chrome    1561    chronos  149w   REG  254,0      145  65263 /home/chronos/Default/shared_proto_db/LOG
+chrome    1561    chronos  150uW  REG  254,0        0  65274 /home/chronos/Default/shared_proto_db/LOCK
+chrome    1561    chronos  151w   REG  254,0       95  65280 /home/chronos/Default/shared_proto_db/000003.log
+chrome    1561    chronos  152w   REG  254,0       50  65281 /home/chronos/Default/shared_proto_db/MANIFEST-000002
+chrome    1561    chronos  154u   REG  254,0     4096  65161 /home/chronos/Default/SharedStorage
+chrome    1561    chronos  155u   REG  254,0        0  65278 /home/chronos/Default/SharedStorage-wal
+chrome    1561    chronos  156w   REG  254,0      171  65289 /home/chronos/Default/Extension State/000003.log
+chrome    1561    chronos  157uW  REG  254,0        0  65286 /home/chronos/Default/Extension State/LOCK
+chrome    1561    chronos  160w   REG  254,0       50  65290 /home/chronos/Default/Extension State/MANIFEST-000002
+chrome    1561    chronos  164r   REG  254,0      980  65318 /home/chronos/Safe Browsing/UrlSuspiciousSite.store.4_13362623783907622
+chrome    1561    chronos  166uw  REG  254,0    49152  65298 /home/chronos/first_party_sets.db
+chrome    1561    chronos  167u   REG  254,0        0  65299 /home/chronos/first_party_sets.db-journal
+chrome    1561    chronos  168u   REG  254,0    45056  65300 /home/chronos/Default/Network Action Predictor
+chrome    1561    chronos  169u   REG  254,0        0  65301 /home/chronos/Default/Network Action Predictor-journal
+chrome    1561    chronos  170u   REG  254,0        0  65294 /home/chronos/Default/heavy_ad_intervention_opt_out.db-journal
+chrome    1561    chronos  176r   REG  254,0   224008  65312 /home/chronos/Safe Browsing/UrlMalware.store.4_13362623775661806
+chrome    1561    chronos  177r   REG  254,0  1073912  65314 /home/chronos/Safe Browsing/UrlMalBin.store.4_13362623775918908
+chrome    1561    chronos  179r   REG  254,0      628  65320 /home/chronos/Safe Browsing/ChromeUrlClientIncident.store.4_13362623783909523
+chrome    1561    chronos  180r   REG  254,0    50504  65322 /home/chronos/Safe Browsing/UrlBilling.store.4_13362623783916522
+chrome    1561    chronos  181r   REG  254,0   191324  65324 /home/chronos/Safe Browsing/UrlSubresourceFilter.store.4_13362623783944441
+chrome    1561    chronos  182r   REG  254,0   324032  65326 /home/chronos/Safe Browsing/UrlHighConfidenceAllowlist.store.32_13362623783978356
+chrome    1561    chronos  183r   REG  254,0    37312  65328 /home/chronos/Safe Browsing/UrlCsdDownloadAllowlist.store.32_13362623783997569
+chrome    1561    chronos  184r   REG  254,0      832  65330 /home/chronos/Safe Browsing/UrlCsdAllowlist.store.32_13362623784001587
+chrome    1561    chronos  185r   REG  254,0     4036  65331 /home/chronos/Safe Browsing/UrlCsdAllowlist.store.4_13362623784001844
+chrome_cr 1578    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome_cr 1578    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome_cr 1578    chronos    3w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome_cr 1580    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome_cr 1580    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome_cr 1580    chronos    3w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1584    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1584    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1584    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1585    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1585    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1585    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+nacl_help 1587    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+nacl_help 1587    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1590    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1590    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1590    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1611    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1611    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1611    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1617    chronos  mem    REG  254,0    45056  65266 /home/chronos/Default/Shared Dictionary/db
+chrome    1617    chronos  mem    REG  254,0    36864  65268 /home/chronos/Default/Trust Tokens
+chrome    1617    chronos  mem    REG  254,0    20480  65272 /home/chronos/Default/Safe Browsing Cookies
+chrome    1617    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1617    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1617    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1617    chronos   22u   REG  254,0    45056  65266 /home/chronos/Default/Shared Dictionary/db
+chrome    1617    chronos   25u   REG  254,0    36864  65268 /home/chronos/Default/Trust Tokens
+chrome    1617    chronos   26u   REG  254,0        0  65269 /home/chronos/Default/Trust Tokens-journal
+chrome    1617    chronos   27u   REG  254,0    20480  65272 /home/chronos/Default/Safe Browsing Cookies
+chrome    1670    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1670    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1670    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1712    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1712    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1712    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1712    chronos   27w   REG  254,0      147  65188 /home/chronos/Default/Local Storage/leveldb/LOG
+chrome    1712    chronos   28w   REG  254,0        0  65187 /home/chronos/Default/Local Storage/leveldb/000003.log
+chrome    1712    chronos   29w   REG  254,0       50  65234 /home/chronos/Default/Local Storage/leveldb/MANIFEST-000002
+chrome    1730    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1730    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1730    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+chrome    1779    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1779    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    1779    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+secanomal 1883 secanomaly   10r   REG  254,0   387066 423585 /var/log/audit/audit.log
+update_en 1995       root    3w   REG  254,0    25757 423666 /var/log/update_engine/update_engine.20240612-085224
+update_en 1995       root    4w   REG  254,0    25757 423666 /var/log/update_engine/update_engine.20240612-085224
+anomaly_d 3076       root   12r   REG  254,0   387806 423585 /var/log/audit/audit.log
+anomaly_d 3076       root   13r   REG  254,0   259494 423563 /var/log/messages
+anomaly_d 3076       root   14r   REG  254,0      380 423567 /var/log/upstart.log
+timbersli 3224       root    1w   REG  254,0   118740 423705 /var/log/timberslide.cros_ec.out
+timbersli 3224       root    2w   REG  254,0   118740 423705 /var/log/timberslide.cros_ec.out
+fwupd     3332      fwupd  mem    REG  254,0   146701 423732 /var/cache/fwupd/quirks.xmlb
+fwupd     3332      fwupd  mem    REG  254,0    76958 423733 /var/cache/fwupd/metadata.xmlb
+fwupd     3332      fwupd  mem    REG  254,0     1566 423715 /var/cache/fwupd/metainfo.xmlb
+fwupd     3332      fwupd    6u   REG  254,0    24576 423731 /var/lib/fwupd/pending.db
+tlsdated- 3334       root   11w   REG  254,0        8 423710 /var/cache/tlsdated/timestamp
+metrics_d 3411    metrics   17u   REG  254,0     9371 423726 /var/log/vmlog/vmlog.20240611-235243
+chrome    4076    chronos    1w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    4076    chronos    2w   REG  254,0    10690 423522 /var/log/ui/ui.20240611-235206
+chrome    4076    chronos    7w   REG  254,0    24144 423633 /var/log/chrome/chrome_240611-235207
+COMMAND  PID  USER  FD   TYPE DEVICE SIZE/OFF   NODE NAME
+fwupd   3332 fwupd mem    REG  254,0     1566 423715 /mnt/stateful_partition/encrypted/var/cache/fwupd/metainfo.xmlb
+COMMAND  PID  USER  FD   TYPE DEVICE SIZE/OFF   NODE NAME
+fwupd   3332 fwupd mem    REG  254,0   146701 423732 /mnt/stateful_partition/encrypted/var/cache/fwupd/quirks.xmlb
+COMMAND  PID  USER  FD   TYPE DEVICE SIZE/OFF   NODE NAME
+fwupd   3332 fwupd mem    REG  254,0    76958 423733 /mnt/stateful_partition/encrypted/var/cache/fwupd/metadata.xmlb
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+tlsdated- 3334 root   11w   REG  254,0        8 423710 /mnt/stateful_partition/encrypted/var/cache/tlsdated/timestamp
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+fwupd   3332 fwupd    6u   REG  254,0    24576 423731 /mnt/stateful_partition/encrypted/var/lib/fwupd/pending.db
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+tcsd    1187  tss    5u   REG  254,0      606 423603 /mnt/stateful_partition/encrypted/var/lib/tpm/system.data
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chapsd  1386 chaps   18w   REG  254,0     2407 423646 /mnt/stateful_partition/encrypted/var/lib/chaps/database/000003.log
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chapsd  1386 chaps   16w   REG  254,0      151 423625 /mnt/stateful_partition/encrypted/var/lib/chaps/database/LOG
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chapsd  1386 chaps   17uW  REG  254,0        0 423626 /mnt/stateful_partition/encrypted/var/lib/chaps/database/LOCK
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chapsd  1386 chaps   19w   REG  254,0       50 423647 /mnt/stateful_partition/encrypted/var/lib/chaps/database/MANIFEST-000002
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   20w   REG  254,0     6438 423566 /mnt/stateful_partition/encrypted/var/log/tlsdate.log
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+update_en 1995 root    3w   REG  254,0    30886 423666 /mnt/stateful_partition/encrypted/var/log/update_engine/update_engine.20240612-085224
+update_en 1995 root    4w   REG  254,0    30886 423666 /mnt/stateful_partition/encrypted/var/log/update_engine/update_engine.20240612-085224
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd   445 syslog   16w   REG  254,0      522 423567 /mnt/stateful_partition/encrypted/var/log/upstart.log
+anomaly_d 3076   root   14r   REG  254,0      522 423567 /mnt/stateful_partition/encrypted/var/log/upstart.log
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+metrics_d 3411 metrics   17u   REG  254,0    18099 423726 /mnt/stateful_partition/encrypted/var/log/vmlog/vmlog.20240611-235243
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+metrics_d 3411 metrics   17u   REG  254,0    18099 423726 /mnt/stateful_partition/encrypted/var/log/vmlog/vmlog.20240611-235243
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+update_en 1995 root    3w   REG  254,0    30886 423666 /var/log/update_engine/update_engine.20240612-085224
+update_en 1995 root    4w   REG  254,0    30886 423666 /var/log/update_engine/update_engine.20240612-085224
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd   445 syslog    9w   REG  254,0   301826 423563 /mnt/stateful_partition/encrypted/var/log/messages
+anomaly_d 3076   root   13r   REG  254,0   301826 423563 /mnt/stateful_partition/encrypted/var/log/messages
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   12w   REG  254,0     2788 423561 /mnt/stateful_partition/encrypted/var/log/bluetooth.log
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   15w   REG  254,0     1282 423565 /mnt/stateful_partition/encrypted/var/log/secure
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+powerd  1199 power    1w   REG  254,0     1336 423601 /mnt/stateful_partition/encrypted/var/log/powerd.out
+powerd  1199 power    2w   REG  254,0     1336 423601 /mnt/stateful_partition/encrypted/var/log/powerd.out
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+timbersli 3224 root    1w   REG  254,0   211975 423705 /mnt/stateful_partition/encrypted/var/log/timberslide.cros_ec.out
+timbersli 3224 root    2w   REG  254,0   211975 423705 /mnt/stateful_partition/encrypted/var/log/timberslide.cros_ec.out
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   11w   REG  254,0    88835 423564 /mnt/stateful_partition/encrypted/var/log/net.log
+COMMAND    PID       USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+auditd     439       root    4w   REG  254,0   695748 423585 /mnt/stateful_partition/encrypted/var/log/audit/audit.log
+secanomal 1883 secanomaly   10r   REG  254,0   695748 423585 /mnt/stateful_partition/encrypted/var/log/audit/audit.log
+anomaly_d 3076       root   12r   REG  254,0   695748 423585 /mnt/stateful_partition/encrypted/var/log/audit/audit.log
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   17w   REG  254,0     2430 423550 /mnt/stateful_partition/encrypted/var/log/secagentd.log
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+powerd  1199 power    4w   REG  254,0    60432 423608 /mnt/stateful_partition/encrypted/var/log/power_manager/powerd.20240611-235205
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+powerd  1199 power    4w   REG  254,0    60432 423608 /mnt/stateful_partition/encrypted/var/log/power_manager/powerd.20240611-235205
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+session_m 1534    root    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+session_m 1534    root    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1561 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1561 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1578 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1578 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1580 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1580 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1584 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1584 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1585 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1585 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+nacl_help 1587 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+nacl_help 1587 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1590 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1590 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1611 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1611 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1617 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1617 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1670 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1670 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1712 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1712 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1730 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1730 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1779 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1779 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    4076 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    4076 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+session_m 1534    root    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+session_m 1534    root    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1561 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1561 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1578 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1578 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1580 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome_cr 1580 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1584 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1584 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1585 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1585 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+nacl_help 1587 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+nacl_help 1587 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1590 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1590 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1611 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1611 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1617 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1617 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1670 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1670 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1712 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1712 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1730 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1730 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1779 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    1779 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    4076 chronos    1w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+chrome    4076 chronos    2w   REG  254,0    10690 423522 /mnt/stateful_partition/encrypted/var/log/ui/ui.20240611-235206
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   10w   REG  254,0   392551 423560 /mnt/stateful_partition/encrypted/var/log/arc.log
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+rsyslogd 445 syslog   21w   REG  254,0    20821 423711 /mnt/stateful_partition/encrypted/var/log/fwupd.log
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chrome    1561 chronos    4w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome_cr 1578 chronos    3w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome_cr 1580 chronos    3w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1584 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1585 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1590 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1611 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1617 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1670 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1712 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1730 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1779 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    4076 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+chrome    1561 chronos    4w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome_cr 1578 chronos    3w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome_cr 1580 chronos    3w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1584 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1585 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1590 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1611 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1617 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1670 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1712 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1730 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    1779 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+chrome    4076 chronos    7w   REG  254,0    26543 423633 /mnt/stateful_partition/encrypted/var/log/chrome/chrome_240611-235207
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem-w  REG  254,0    49152 65298 /mnt/stateful_partition/encrypted/chronos/first_party_sets.db
+chrome  1561 chronos  166uw  REG  254,0    49152 65298 /mnt/stateful_partition/encrypted/chronos/first_party_sets.db
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65246 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_0
+chrome  1561 chronos  124u   REG  254,0     8192 65246 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_0
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65257 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_2
+chrome  1561 chronos  122u   REG  254,0     8192 65257 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_2
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   270336 65256 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_1
+chrome  1561 chronos  119u   REG  254,0   270336 65256 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_1
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   262512 65255 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/index
+chrome  1561 chronos  123u   REG  254,0   262512 65255 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/index
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65258 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_3
+chrome  1561 chronos  126u   REG  254,0     8192 65258 /mnt/stateful_partition/encrypted/chronos/GraphiteDawnCache/data_3
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  107w   REG  254,0      152 65205 /mnt/stateful_partition/encrypted/chronos/Default/Extension Rules/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  103w   REG  254,0      145 65211 /mnt/stateful_partition/encrypted/chronos/Default/Extension Rules/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  104uW  REG  254,0        0 65212 /mnt/stateful_partition/encrypted/chronos/Default/Extension Rules/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  108w   REG  254,0       50 65222 /mnt/stateful_partition/encrypted/chronos/Default/Extension Rules/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  155u   REG  254,0        0 65278 /mnt/stateful_partition/encrypted/chronos/Default/SharedStorage-wal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  169u   REG  254,0        0 65301 /mnt/stateful_partition/encrypted/chronos/Default/Network Action Predictor-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  154u   REG  254,0     4096 65161 /mnt/stateful_partition/encrypted/chronos/Default/SharedStorage
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  144w   REG  254,0      300 65275 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/metadata/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  140w   REG  254,0      154 65261 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/metadata/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  142uW  REG  254,0        0 65262 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/metadata/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  145w   REG  254,0       50 65276 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/metadata/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  151w   REG  254,0       95 65280 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  149w   REG  254,0      145 65263 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  150uW  REG  254,0        0 65274 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  152w   REG  254,0       50 65281 /mnt/stateful_partition/encrypted/chronos/Default/shared_proto_db/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  131u   REG  254,0     8720 65168 /mnt/stateful_partition/encrypted/chronos/Default/History-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  101u   REG  254,0        0 65195 /mnt/stateful_partition/encrypted/chronos/Default/Web Data-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1617 chronos  mem    REG  254,0    45056 65266 /mnt/stateful_partition/encrypted/chronos/Default/Shared Dictionary/db
+chrome  1617 chronos   22u   REG  254,0    45056 65266 /mnt/stateful_partition/encrypted/chronos/Default/Shared Dictionary/db
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  105u   REG  254,0        0 65221 /mnt/stateful_partition/encrypted/chronos/Default/Favicons-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem-w  REG  254,0   163840 65167 /mnt/stateful_partition/encrypted/chronos/Default/History
+chrome  1561 chronos   91uw  REG  254,0   163840 65167 /mnt/stateful_partition/encrypted/chronos/Default/History
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   90u   REG  254,0   131072 65283 /mnt/stateful_partition/encrypted/chronos/Default/Visited Links
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    20480 65220 /mnt/stateful_partition/encrypted/chronos/Default/Favicons
+chrome  1561 chronos  102u   REG  254,0    20480 65220 /mnt/stateful_partition/encrypted/chronos/Default/Favicons
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1617 chronos   26u   REG  254,0        0 65269 /mnt/stateful_partition/encrypted/chronos/Default/Trust Tokens-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    45056 65300 /mnt/stateful_partition/encrypted/chronos/Default/Network Action Predictor
+chrome  1561 chronos  168u   REG  254,0    45056 65300 /mnt/stateful_partition/encrypted/chronos/Default/Network Action Predictor
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  156w   REG  254,0      171 65289 /mnt/stateful_partition/encrypted/chronos/Default/Extension State/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  141w   REG  254,0      145 65285 /mnt/stateful_partition/encrypted/chronos/Default/Extension State/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  157uW  REG  254,0        0 65286 /mnt/stateful_partition/encrypted/chronos/Default/Extension State/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  160w   REG  254,0       50 65290 /mnt/stateful_partition/encrypted/chronos/Default/Extension State/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    16384 65293 /mnt/stateful_partition/encrypted/chronos/Default/heavy_ad_intervention_opt_out.db
+chrome  1561 chronos  146u   REG  254,0    16384 65293 /mnt/stateful_partition/encrypted/chronos/Default/heavy_ad_intervention_opt_out.db
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   94w   REG  254,0       46 65208 /mnt/stateful_partition/encrypted/chronos/Default/Sync Data/LevelDB/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   86w   REG  254,0      147 65185 /mnt/stateful_partition/encrypted/chronos/Default/Sync Data/LevelDB/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   93uW  REG  254,0        0 65186 /mnt/stateful_partition/encrypted/chronos/Default/Sync Data/LevelDB/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   99w   REG  254,0       50 65209 /mnt/stateful_partition/encrypted/chronos/Default/Sync Data/LevelDB/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   98w   REG  254,0       40 65217 /mnt/stateful_partition/encrypted/chronos/Default/Site Characteristics Database/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   95w   REG  254,0      159 65191 /mnt/stateful_partition/encrypted/chronos/Default/Site Characteristics Database/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   97uW  REG  254,0        0 65192 /mnt/stateful_partition/encrypted/chronos/Default/Site Characteristics Database/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  106w   REG  254,0       50 65218 /mnt/stateful_partition/encrypted/chronos/Default/Site Characteristics Database/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  170u   REG  254,0        0 65294 /mnt/stateful_partition/encrypted/chronos/Default/heavy_ad_intervention_opt_out.db-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  115w   REG  254,0       57 65215 /mnt/stateful_partition/encrypted/chronos/Default/Extension Scripts/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   92w   REG  254,0      147 65219 /mnt/stateful_partition/encrypted/chronos/Default/Extension Scripts/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  109uW  REG  254,0        0 65245 /mnt/stateful_partition/encrypted/chronos/Default/Extension Scripts/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  110w   REG  254,0       50 65247 /mnt/stateful_partition/encrypted/chronos/Default/Extension Scripts/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   124928 65194 /mnt/stateful_partition/encrypted/chronos/Default/Web Data
+chrome  1561 chronos  100u   REG  254,0   124928 65194 /mnt/stateful_partition/encrypted/chronos/Default/Web Data
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1712 chronos   28w   REG  254,0        0 65187 /mnt/stateful_partition/encrypted/chronos/Default/Local Storage/leveldb/000003.log
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1712 chronos   27w   REG  254,0      147 65188 /mnt/stateful_partition/encrypted/chronos/Default/Local Storage/leveldb/LOG
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos   96uW  REG  254,0        0 65189 /mnt/stateful_partition/encrypted/chronos/Default/Local Storage/leveldb/LOCK
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1712 chronos   29w   REG  254,0       50 65234 /mnt/stateful_partition/encrypted/chronos/Default/Local Storage/leveldb/MANIFEST-000002
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1617 chronos  mem    REG  254,0    20480 65272 /mnt/stateful_partition/encrypted/chronos/Default/Safe Browsing Cookies
+chrome  1617 chronos   27u   REG  254,0    20480 65272 /mnt/stateful_partition/encrypted/chronos/Default/Safe Browsing Cookies
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1617 chronos  mem    REG  254,0    36864 65268 /mnt/stateful_partition/encrypted/chronos/Default/Trust Tokens
+chrome  1617 chronos   25u   REG  254,0    36864 65268 /mnt/stateful_partition/encrypted/chronos/Default/Trust Tokens
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    50504 65322 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlBilling.store.4_13362623783916522
+chrome  1561 chronos  180r   REG  254,0    50504 65322 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlBilling.store.4_13362623783916522
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0      980 65318 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSuspiciousSite.store.4_13362623783907622
+chrome  1561 chronos  164r   REG  254,0      980 65318 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSuspiciousSite.store.4_13362623783907622
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0  1073912 65314 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlMalBin.store.4_13362623775918908
+chrome  1561 chronos  177r   REG  254,0  1073912 65314 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlMalBin.store.4_13362623775918908
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    37312 65328 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdDownloadAllowlist.store.32_13362623783997569
+chrome  1561 chronos  183r   REG  254,0    37312 65328 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdDownloadAllowlist.store.32_13362623783997569
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   127876 65302 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlUws.store.4_13362623775455865
+chrome  1561 chronos  129r   REG  254,0   127876 65302 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlUws.store.4_13362623775455865
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0      628 65320 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/ChromeUrlClientIncident.store.4_13362623783909523
+chrome  1561 chronos  179r   REG  254,0      628 65320 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/ChromeUrlClientIncident.store.4_13362623783909523
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   191324 65324 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSubresourceFilter.store.4_13362623783944441
+chrome  1561 chronos  181r   REG  254,0   191324 65324 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSubresourceFilter.store.4_13362623783944441
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     4036 65331 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdAllowlist.store.4_13362623784001844
+chrome  1561 chronos  185r   REG  254,0     4036 65331 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdAllowlist.store.4_13362623784001844
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   224008 65312 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlMalware.store.4_13362623775661806
+chrome  1561 chronos  176r   REG  254,0   224008 65312 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlMalware.store.4_13362623775661806
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0      832 65330 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdAllowlist.store.32_13362623784001587
+chrome  1561 chronos  184r   REG  254,0      832 65330 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlCsdAllowlist.store.32_13362623784001587
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0 22927588 65316 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSoceng.store.4_13362623779041068
+chrome  1561 chronos  147r   REG  254,0 22927588 65316 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlSoceng.store.4_13362623779041068
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   324032 65326 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlHighConfidenceAllowlist.store.32_13362623783978356
+chrome  1561 chronos  182r   REG  254,0   324032 65326 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/UrlHighConfidenceAllowlist.store.32_13362623783978356
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0  1926848 65310 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/ChromeExtMalware.store.32_13362623775481488
+chrome  1561 chronos  148r   REG  254,0  1926848 65310 /mnt/stateful_partition/encrypted/chronos/Safe Browsing/ChromeExtMalware.store.32_13362623775481488
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0    45056 65251 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_0
+chrome  1561 chronos  116u   REG  254,0    45056 65251 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_0
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0  1056768 65253 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_2
+chrome  1561 chronos  118u   REG  254,0  1056768 65253 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_2
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   270336 65252 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_1
+chrome  1561 chronos  117u   REG  254,0   270336 65252 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_1
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   262512 65250 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/index
+chrome  1561 chronos  114u   REG  254,0   262512 65250 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/index
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0  4202496 65254 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_3
+chrome  1561 chronos  112u   REG  254,0  4202496 65254 /mnt/stateful_partition/encrypted/chronos/GrShaderCache/data_3
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  167u   REG  254,0        0 65299 /mnt/stateful_partition/encrypted/chronos/first_party_sets.db-journal
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65163 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_0
+chrome  1561 chronos   55u   REG  254,0     8192 65163 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_0
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65165 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_2
+chrome  1561 chronos   66u   REG  254,0     8192 65165 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_2
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   270336 65164 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_1
+chrome  1561 chronos   65u   REG  254,0   270336 65164 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_1
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0   262512 65162 /mnt/stateful_partition/encrypted/chronos/ShaderCache/index
+chrome  1561 chronos   62u   REG  254,0   262512 65162 /mnt/stateful_partition/encrypted/chronos/ShaderCache/index
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+chrome  1561 chronos  mem    REG  254,0     8192 65166 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_3
+chrome  1561 chronos   67u   REG  254,0     8192 65166 /mnt/stateful_partition/encrypted/chronos/ShaderCache/data_3
